@@ -32,7 +32,7 @@ Deno.serve(async (req) => {
   const { data: { user } } = await supabaseClient.auth.getUser(token)
 
   const response = {
-    message: `Hello ${user?.id}! You've sent the file "${audio.contentType}."`,
+    message: `Hello ${user?.id}! You've sent the file "${audio.filename}."`,
   }
 
   return new Response(
